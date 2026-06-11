@@ -1,0 +1,569 @@
+/* Prosperity REIS — IDX Staging Site Styling
+   Matches live prosperityreis.com brand palette */
+
+:root {
+  --copper: #c19575;
+  --copper-light: #d4ad8a;
+  --copper-muted: #a07a60;
+  --black: #111111;
+  --dark: #0e0e0e;
+  --grey-1: #444444;
+  --grey-2: #777777;
+  --grey-3: #bbbbbb;
+  --grey-4: #eeeeee;
+  --grey-5: #f7f3ee;
+  --white: #ffffff;
+  --accent-red: #c0392b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222;
+  background: #fafafa;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 600;
+  color: var(--black);
+}
+
+a { color: var(--copper-muted); text-decoration: none; }
+a:hover { color: var(--copper); text-decoration: underline; }
+
+/* ---------- staging banner ---------- */
+.staging-banner {
+  background: var(--accent-red);
+  color: #fff;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.staging-banner strong { color: #fff; }
+
+/* ---------- header ---------- */
+header.site {
+  background: var(--white);
+  border-bottom: 1px solid var(--grey-4);
+  padding: 18px 0;
+}
+header.site .inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+header.site .brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+header.site .brand-mark {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--copper);
+  letter-spacing: 0.05em;
+}
+header.site .brand-mark .sub {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--grey-2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+header.site nav ul {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  font-size: 14px;
+}
+header.site nav a {
+  color: var(--grey-1);
+}
+header.site nav a:hover { color: var(--copper); }
+
+header.site .contact {
+  font-size: 13px;
+  color: var(--grey-1);
+  text-align: right;
+}
+header.site .contact strong { color: var(--copper); font-size: 14px; }
+
+/* ---------- hero ---------- */
+.hero {
+  background: var(--black);
+  color: #fff;
+  padding: 70px 24px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 44px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.hero .tagline {
+  font-size: 18px;
+  color: var(--copper-light);
+  margin-bottom: 36px;
+  font-style: italic;
+}
+.hero .search-box {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 4px;
+  padding: 6px;
+  display: flex;
+  gap: 6px;
+}
+.hero .search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 14px 18px;
+  font-size: 15px;
+  color: #222;
+}
+.hero .search-box button {
+  background: var(--copper);
+  color: #fff;
+  border: none;
+  padding: 0 28px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.hero .search-box button:hover { background: var(--copper-muted); }
+.hero .search-meta {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--grey-3);
+}
+
+/* ---------- section ---------- */
+section.section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+section.section h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+section.section .lede {
+  text-align: center;
+  color: var(--grey-1);
+  margin-bottom: 36px;
+  font-size: 15px;
+}
+
+/* ---------- county tiles ---------- */
+.county-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.county-tile {
+  background: var(--white);
+  border: 1px solid var(--grey-4);
+  border-radius: 4px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.county-tile:hover {
+  border-color: var(--copper);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.county-tile .name {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+.county-tile .state {
+  font-size: 12px;
+  color: var(--grey-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- IDX disclosure (home page block) ---------- */
+.idx-explainer {
+  background: var(--grey-5);
+  border-left: 4px solid var(--copper);
+  padding: 24px 28px;
+  margin: 24px 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 14px;
+  color: var(--grey-1);
+}
+.idx-explainer h3 {
+  font-size: 16px;
+  color: var(--copper-muted);
+  margin-bottom: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.idx-explainer p { margin-bottom: 10px; }
+.idx-explainer p:last-child { margin-bottom: 0; }
+
+/* ---------- search-results page ---------- */
+.search-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--grey-4);
+  padding: 24px;
+}
+.search-header .inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.search-header .filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.search-header select {
+  padding: 8px 12px;
+  border: 1px solid var(--grey-4);
+  border-radius: 3px;
+  font-size: 13px;
+  color: #222;
+  background: var(--white);
+}
+.search-header .result-count {
+  font-size: 14px;
+  color: var(--grey-1);
+}
+.search-header .result-count strong { color: var(--copper); }
+
+.brokerage-attribution {
+  background: var(--copper);
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+.brokerage-attribution span {
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 12px;
+  color: rgba(255,255,255,0.85);
+}
+
+.listing-grid {
+  max-width: 1180px;
+  margin: 36px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.listing-card {
+  background: var(--white);
+  border: 1px solid var(--grey-4);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.listing-card:hover {
+  border-color: var(--copper);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.listing-card .photo-wrap {
+  position: relative;
+  background: linear-gradient(135deg, #c0bdb6 0%, #8a857a 100%);
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', Georgia, serif;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.listing-card .photo-wrap .mls-watermark {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  font-family: -apple-system, sans-serif;
+}
+.listing-card .price {
+  padding: 16px 20px 6px;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--black);
+}
+.listing-card .address {
+  padding: 0 20px 10px;
+  font-size: 14px;
+  color: var(--grey-1);
+}
+.listing-card .specs {
+  padding: 0 20px 14px;
+  font-size: 13px;
+  color: var(--grey-2);
+  display: flex;
+  gap: 12px;
+}
+.listing-card .specs span { display: inline-block; }
+.listing-card .listing-broker {
+  padding: 12px 20px;
+  background: var(--grey-5);
+  border-top: 1px solid var(--grey-4);
+  font-size: 12px;
+  color: var(--grey-1);
+  margin-top: auto;
+}
+.listing-card .listing-broker .label {
+  font-weight: 600;
+  color: var(--copper-muted);
+  letter-spacing: 0.04em;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.listing-card .ad-broker {
+  padding: 10px 20px;
+  background: var(--black);
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.listing-card .ad-broker strong { color: var(--copper-light); }
+
+/* ---------- listing detail page ---------- */
+.listing-detail {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+.listing-detail .photo-hero {
+  width: 100%;
+  height: 460px;
+  background: linear-gradient(135deg, #a09a8e 0%, #5e574f 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', Georgia, serif;
+  color: rgba(255,255,255,0.4);
+  font-size: 20px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+.listing-detail .photo-hero .mls-watermark {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  font-family: -apple-system, sans-serif;
+}
+.listing-detail .price {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 42px;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.listing-detail .address {
+  font-size: 18px;
+  color: var(--grey-1);
+  margin-bottom: 16px;
+}
+.listing-detail .badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.listing-detail .badge {
+  background: var(--copper);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 3px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+.listing-detail .badge.estimate {
+  background: var(--grey-1);
+}
+.listing-detail .specs-row {
+  display: flex;
+  gap: 32px;
+  padding: 20px 0;
+  border-top: 1px solid var(--grey-4);
+  border-bottom: 1px solid var(--grey-4);
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: var(--grey-1);
+  flex-wrap: wrap;
+}
+.listing-detail .specs-row .spec strong {
+  display: block;
+  font-size: 12px;
+  color: var(--grey-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+.listing-detail .description {
+  font-size: 15px;
+  color: var(--grey-1);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.listing-detail .attribution-block {
+  background: var(--grey-5);
+  padding: 24px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+.listing-detail .attribution-block .ad-broker {
+  font-size: 18px;
+  color: var(--black);
+  font-weight: 600;
+  font-family: 'Cinzel', Georgia, serif;
+  margin-bottom: 8px;
+}
+.listing-detail .attribution-block .ad-broker-detail {
+  font-size: 13px;
+  color: var(--grey-1);
+  margin-bottom: 18px;
+}
+.listing-detail .attribution-block .listing-broker {
+  font-size: 14px;
+  color: var(--grey-1);
+}
+.listing-detail .attribution-block .listing-broker strong { color: var(--copper-muted); }
+.listing-detail .attribution-block .agent-line {
+  font-size: 13px;
+  color: var(--grey-2);
+  margin-top: 6px;
+}
+
+.listing-detail .accuracy-inline {
+  padding: 12px 18px;
+  background: var(--grey-5);
+  border-left: 3px solid var(--grey-2);
+  font-size: 13px;
+  color: var(--grey-1);
+  font-style: italic;
+  margin-bottom: 24px;
+  border-radius: 0 3px 3px 0;
+}
+
+/* ---------- IDX disclosures footer block ---------- */
+.idx-disclosures {
+  background: var(--black);
+  color: var(--grey-3);
+  padding: 40px 24px 12px;
+  margin-top: 60px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.idx-disclosures .inner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.idx-disclosures h3 {
+  color: var(--copper-light);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.idx-disclosures p {
+  margin-bottom: 12px;
+}
+.idx-disclosures .updated {
+  background: rgba(193, 149, 117, 0.12);
+  border: 1px solid rgba(193, 149, 117, 0.25);
+  padding: 10px 16px;
+  border-radius: 3px;
+  color: var(--copper-light);
+  font-size: 12px;
+  margin: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.idx-disclosures .updated strong { color: #fff; }
+.idx-disclosures .footer-row {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 16px;
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--grey-2);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.idx-disclosures .footer-row .copyright-block { display: flex; flex-direction: column; gap: 4px; }
+.idx-disclosures .footer-row .bright-copyright { color: var(--copper-light); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 760px) {
+  header.site .inner { flex-direction: column; align-items: flex-start; }
+  header.site nav ul { flex-wrap: wrap; gap: 12px; font-size: 13px; }
+  .hero h1 { font-size: 32px; }
+  .hero .search-box { flex-direction: column; padding: 10px; }
+  .hero .search-box button { padding: 12px; }
+  .listing-detail .price { font-size: 32px; }
+}
