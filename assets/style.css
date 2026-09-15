@@ -567,3 +567,58 @@ section.section .lede {
   .hero .search-box button { padding: 12px; }
   .listing-detail .price { font-size: 32px; }
 }
+
+/* ------------------------------------------------------------------
+   Bright MLS display instructions (policy effective 2026-09-30)
+   Styles for listings whose price or photos the listing broker has
+   instructed us not to display, and for real feed photography.
+   ------------------------------------------------------------------ */
+
+.listing-card .photo-wrap img,
+.listing-detail .photo-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.listing-detail .photo-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 12px 0 20px;
+  padding-bottom: 4px;
+}
+
+.listing-detail .photo-strip img {
+  height: 86px;
+  width: 128px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex: 0 0 auto;
+  background: #1a1a1a;
+}
+
+/* Price withheld per InternetListingDisplayPricesYN = N.
+   Deliberately not styled to look like a price: it is a referral line,
+   and must never be mistaken for a dollar figure or sorted as one. */
+.listing-card .price.price-withheld,
+.listing-detail .price.price-withheld {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0;
+  color: #a07a60;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.listing-detail .price.price-withheld {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 640px) {
+  .listing-detail .price.price-withheld { font-size: 16px; }
+}
